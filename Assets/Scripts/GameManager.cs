@@ -26,7 +26,7 @@ namespace rumi
 
         // Whether the game has ended
         bool gameEnded = false;
-        
+
         // The player who won the game
         private Player winner;
 
@@ -532,7 +532,7 @@ namespace rumi
                 }
             }
         }
-        
+
         // Ends the current round and begins the next round or ends the game if all rounds have been completed
         void EndRound()
         {
