@@ -1,41 +1,29 @@
-﻿namespace Assets.Scripts
+﻿namespace rumi
 {
-    using UnityEngine;
-
-    public enum Suite
+    // Represents a single playing card
+    public class Card
     {
-        Clubs,
-        Hearts,
-        Spades,
-        Diamond
-    }
+        public CardRank Rank { get; set; }
+        public CardSuit Suit { get; set; }
 
-    [System.Serializable]
-    public class CardModel
-    {
-        public int Number;
+        // Indicates whether the card is a wildcard
+        public bool IsWild => Rank == CardRank.Two;
 
-        public Suite Suite;
-    }
-
-    public class Card : MonoBehaviour
-    {
-        [Header("Number")]
-        public int Number;
-
-        [Header("Suite")]
-        public Suite Suite;
-
-        // Start is called before the first frame update
-        void Start()
+        public Card(CardRank rank, CardSuit suit)
         {
-
+            Rank = rank;
+            Suit = suit;
         }
 
-        // Update is called once per frame
-        void Update()
+        // Returns the point value of the specified card
+        public int GetValue()
         {
+            // Get the CardValueAttribute for the rank
+            CardValueAttribute attribute = System.Attribute.GetCustomAttribute(
+                typeof(CardRank).GetField(Rank.ToString()), typeof(CardValueAttribute)) as CardValueAttribute;
 
+            // Return the value from the attribute
+            return attribute.Value;
         }
     }
 }
