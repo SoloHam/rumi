@@ -31,13 +31,19 @@ namespace rumi
         List<Card> Deck;
 
         [SerializeField]
-        GameObject CardPrefab;
+        public GameObject CardPrefab;
 
         [SerializeField]
         RectTransform StockParent;
 
         [SerializeField]
         RectTransform DiscardPileParent;
+
+        [SerializeField]
+        public Sprite CardBackSide;
+
+        [SerializeField]
+        public Deck DeckComponent => FindObjectOfType<Deck>();
 
         // The player who won the game
         private Player winner;
@@ -68,14 +74,11 @@ namespace rumi
             // Create a list of all cards in the game (two decks)
             List<Card> allCards = this.Deck.Union(this.Deck).ToList();
 
-            foreach (var card in allCards)
-            {
-                var cardObj = Instantiate(this.CardPrefab, this.StockParent);
-                cardObj.GetComponent<CardUI>
-            }
-
             // Shuffle the cards
             ShuffleCards(allCards);
+
+            // Add cards to the deck UI
+            this.DeckComponent.InitialiseCards(allCards);
 
             // Deal the cards to the players
             players = new List<Player>();
