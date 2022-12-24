@@ -42,6 +42,8 @@ namespace rumi
         [SerializeField]
         public DiscardPile DiscardPileComponent => FindObjectOfType<DiscardPile>();
 
+        private Player currentPlayer => players[currentPlayerIndex];
+
         // The player who won the game
         private Player winner;
 
@@ -79,18 +81,6 @@ namespace rumi
 
             // Deal the cards to the players
             players = FindObjectsOfType<Player>().ToList();
-
-            for (int i = 0; i < 11; i++)
-            {
-                foreach (Player player in players)
-                {
-                    player.AddCard(allCards[0]);
-                    allCards.RemoveAt(0);
-                }
-            }
-
-            // Set up the stock pile and discard pile
-            DiscardPileComponent.Add(StockPileComponent.DrawCard());
         }
 
         // Shuffles the list of cards using the Fisher-Yates shuffle algorithm
@@ -114,13 +104,25 @@ namespace rumi
                 player.Melds.Clear();
                 player.Points = 0;
             }
-            MakeMove();
+
+            for (int i = 0; i < 11; i++)
+            {
+                foreach (Player player in players)
+                {
+                    player.AddCard(StockPileComponent.DrawCard());
+                }
+            }
+
+            // Set up the discard pile
+            DiscardPileComponent.Add(StockPileComponent.DrawCard());
+
+            currentPlayer.MakeMove();
         }
 
         // Allows the current player to make their move by drawing or discarding a card and attempting to meld off their cards
         void MakeMove()
         {
-            Player currentPlayer = players[currentPlayerIndex];
+            var currentPlayer = players[currentPlayerIndex];
 
             // Check if the current player has any buys remaining
             if (currentPlayer.BuysRemaining > 0 && CanBuyCard())

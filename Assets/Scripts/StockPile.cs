@@ -1,10 +1,9 @@
 ﻿namespace rumi
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     using UnityEngine;
+    using UnityEngine.EventSystems;
 
     public class StockPile : MonoBehaviour
     {
@@ -12,6 +11,12 @@
 
         // The stock pile
         Queue<Card> stockPile;
+
+        public bool AllowDrawing;
+
+        // Define the event and its event handler delegate
+        public delegate void PileClickedEventHandler(CardUI cardUI);
+        public event PileClickedEventHandler PileClicked;
 
         private void Start()
         {
@@ -59,6 +64,22 @@
         public Card DrawCard()
         {
             return stockPile.Dequeue();
+        }
+
+        public void OnPileClicked(BaseEventData eventData)
+        {
+            // Get the PointerEventData from the event data
+            var pointerEventData = (PointerEventData)eventData;
+
+            // Get the CardUI component of the clicked card
+            var cardUI = pointerEventData.pointerPressRaycast.gameObject.GetComponent<CardUI>();
+            if (cardUI == null)
+            {
+                return;
+            }
+
+            // Raise the CardClicked event
+            PileClicked?.Invoke(cardUI);
         }
     }
 }

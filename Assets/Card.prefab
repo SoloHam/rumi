@@ -93,4 +93,6 @@ MonoBehaviour:
     Rank: 0
     Suit: 0
     Artwork: {fileID: 0}
+    CardUI: {fileID: 0}
   ImageComponent: {fileID: 885544207204171402}
+  ShowFace: 0

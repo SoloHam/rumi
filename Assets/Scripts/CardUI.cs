@@ -39,6 +39,8 @@
             cardPos.x = 0;
             cardTransform.localPosition = cardPos;
 
+            cardTransform.localRotation = Quaternion.identity;
+
             if (rotation != null)
             {
                 cardTransform.localRotation = rotation.Value;
