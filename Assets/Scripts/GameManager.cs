@@ -18,12 +18,6 @@ namespace rumi
         // The current round
         int currentRound = 1;
 
-        // The stock pile
-        Queue<Card> stockPile;
-
-        // The discard pile
-        Stack<Card> discardPile;
-
         // Whether the game has ended
         bool gameEnded = false;
 
@@ -43,7 +37,10 @@ namespace rumi
         public Sprite CardBackSide;
 
         [SerializeField]
-        public Deck DeckComponent => FindObjectOfType<Deck>();
+        public StockPile StockPileComponent => FindObjectOfType<StockPile>();
+
+        [SerializeField]
+        public DiscardPile DiscardPileComponent => FindObjectOfType<DiscardPile>();
 
         // The player who won the game
         private Player winner;
@@ -78,28 +75,22 @@ namespace rumi
             ShuffleCards(allCards);
 
             // Add cards to the deck UI
-            this.DeckComponent.InitialiseCards(allCards);
+            this.StockPileComponent.Initialise(allCards);
 
             // Deal the cards to the players
-            players = new List<Player>();
-            for (int i = 0; i < 4; i++)
-            {
-                players.Add(new Player(new List<Card>(), new List<Meld>(), 3, 0));
-            }
+            players = FindObjectsOfType<Player>().ToList();
 
             for (int i = 0; i < 11; i++)
             {
                 foreach (Player player in players)
                 {
-                    player.Hand.Add(allCards[0]);
+                    player.AddCard(allCards[0]);
                     allCards.RemoveAt(0);
                 }
             }
 
             // Set up the stock pile and discard pile
-            stockPile = new Queue<Card>(allCards);
-            discardPile = new Stack<Card>();
-            discardPile.Push(stockPile.Dequeue());
+            DiscardPileComponent.Add(StockPileComponent.DrawCard());
         }
 
         // Shuffles the list of cards using the Fisher-Yates shuffle algorithm
@@ -165,7 +156,7 @@ namespace rumi
         {
             // Get the current player and the card on the top of the discard pile
             Player currentPlayer = players[currentPlayerIndex];
-            Card card = discardPile.Peek();
+            Card card = DiscardPileComponent.Peek();
 
             // Check if the player has any remaining buys
             if (currentPlayer.BuysRemaining > 0)
@@ -193,8 +184,8 @@ namespace rumi
         void BuyCard()
         {
             Player currentPlayer = players[currentPlayerIndex];
-            currentPlayer.Hand.Add(discardPile.Pop());
-            currentPlayer.Hand.Add(stockPile.Dequeue());
+            currentPlayer.Hand.Add(DiscardPileComponent.Pop());
+            currentPlayer.Hand.Add(StockPileComponent.DrawCard());
 
             currentPlayer.BuysRemaining--;
         }
@@ -210,11 +201,11 @@ namespace rumi
 
             if (drewFromStock)
             {
-                currentPlayer.Hand.Add(stockPile.Dequeue());
+                currentPlayer.Hand.Add(StockPileComponent.DrawCard());
             }
             else
             {
-                currentPlayer.Hand.Add(discardPile.Pop());
+                currentPlayer.Hand.Add(DiscardPileComponent.Pop());
             }
         }
 
@@ -297,7 +288,7 @@ namespace rumi
 
             // Discard the most useless card
             currentPlayer.Hand.Remove(mostUselessCard);
-            discardPile.Push(mostUselessCard);
+            DiscardPileComponent.Add(mostUselessCard);
 
             // Check if the current player has gone out
             if (currentPlayer.Hand.Count == 0)

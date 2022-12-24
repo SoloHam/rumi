@@ -387,7 +387,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 215}
+  m_SizeDelta: {x: 0, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86127556
 MonoBehaviour:
@@ -539,7 +539,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 215}
+  m_SizeDelta: {x: 0, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192032677
 MonoBehaviour:
@@ -1073,159 +1073,211 @@ MonoBehaviour:
   - Rank: 0
     Suit: 0
     Artwork: {fileID: 21300000, guid: 80ef12bd54191a649894362817fabbdd, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 1
     Suit: 0
     Artwork: {fileID: 21300000, guid: 1d9665595d5392644a6684a713c11017, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 2
     Suit: 0
     Artwork: {fileID: 21300000, guid: 8cad84bfadcc1724b95fb14787e382bb, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 3
     Suit: 0
     Artwork: {fileID: 21300000, guid: d9289cec216fa5f4b977524f1694d643, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 4
     Suit: 0
     Artwork: {fileID: 21300000, guid: 4ec341db8bf92db4fba740d30905f718, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 5
     Suit: 0
     Artwork: {fileID: 21300000, guid: 27774c253ecbf604fad7cee7ce30fb63, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 6
     Suit: 0
     Artwork: {fileID: 21300000, guid: 3a5597aa2e2eda643a06fb4919d2281b, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 7
     Suit: 0
     Artwork: {fileID: 21300000, guid: 0c8d3a50eedc0ef45a185fae35660e25, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 8
     Suit: 0
     Artwork: {fileID: 21300000, guid: 866bea9f0255bfe4e9d5c47d9fae6ec4, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 9
     Suit: 0
     Artwork: {fileID: 21300000, guid: d59a3e7acf5ee78419161e727d3b3933, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 10
     Suit: 0
-    Artwork: {fileID: 21300000, guid: 0559466d182111b4d95b91da669a4473, type: 3}
+    Artwork: {fileID: 21300000, guid: 6fab7dbd79b29a041a4310c3ee5a5126, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 11
     Suit: 0
-    Artwork: {fileID: 21300000, guid: cfcf7882a6a3de644b725a75305b13d6, type: 3}
+    Artwork: {fileID: 21300000, guid: fd57743bf5ff46a4e9799ccd27188043, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 12
     Suit: 0
-    Artwork: {fileID: 21300000, guid: 67db8db17b9de0c4cab64d9b371e7c03, type: 3}
+    Artwork: {fileID: 21300000, guid: 58ee82364f5daed45b09433e1d8cc342, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 0
     Suit: 1
     Artwork: {fileID: 21300000, guid: 9ae60dd7185ca8245955d0574c0ff5cd, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 1
     Suit: 1
     Artwork: {fileID: 21300000, guid: ca765825f02711448be4fedb0a88dd09, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 2
     Suit: 1
     Artwork: {fileID: 21300000, guid: 98483ff99884dce4a8876544f76ebfc5, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 3
     Suit: 1
     Artwork: {fileID: 21300000, guid: dd6d68bbd2c4f1846ad78c0fa1d55502, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 4
     Suit: 1
     Artwork: {fileID: 21300000, guid: 4cbd8908dffcab64da0c57b111c26fe7, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 5
     Suit: 1
     Artwork: {fileID: 21300000, guid: 477393bbbf127154fbc3809e7fd8ad60, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 6
     Suit: 1
     Artwork: {fileID: 21300000, guid: ff1b5cf2c1acdfc4b834ae61a375c312, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 7
     Suit: 1
     Artwork: {fileID: 21300000, guid: f7e5417a2f924f14ea87afff05045ead, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 8
     Suit: 1
     Artwork: {fileID: 21300000, guid: 0f8bce750042ebe42952a30fb37344d7, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 9
     Suit: 1
     Artwork: {fileID: 21300000, guid: f74de6344060f7b41aa03358e8ccfe91, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 10
     Suit: 1
-    Artwork: {fileID: 21300000, guid: 6241c5d1b2641e945adb0409a2cc9527, type: 3}
+    Artwork: {fileID: 21300000, guid: 6fab7dbd79b29a041a4310c3ee5a5126, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 11
     Suit: 1
-    Artwork: {fileID: 21300000, guid: 6f4a09c56baf28a4293218b8f243cbdc, type: 3}
+    Artwork: {fileID: 21300000, guid: 4ccc1e212415a504b91af6399c290e5b, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 12
     Suit: 1
-    Artwork: {fileID: 21300000, guid: ee1868a2b9f036d4383531bd10cff373, type: 3}
+    Artwork: {fileID: 21300000, guid: 093c54e1bd461d3478987847d78dba4b, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 0
     Suit: 2
     Artwork: {fileID: 21300000, guid: f403739288b41b74b975ec3a30d652e3, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 1
     Suit: 2
     Artwork: {fileID: 21300000, guid: 494e5becfaaf9b54a8b17600a8acf49f, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 2
     Suit: 2
     Artwork: {fileID: 21300000, guid: 2023597e29f42d6449bf02c480c2f280, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 3
     Suit: 2
     Artwork: {fileID: 21300000, guid: 0dd2dd0243a28e443a318f56e3ed0e72, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 4
     Suit: 2
     Artwork: {fileID: 21300000, guid: f5c4da3ca7740b54d86ec60bae8b4aed, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 5
     Suit: 2
     Artwork: {fileID: 21300000, guid: 6d1f8d3e7a8793d42b556549ffc92751, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 6
     Suit: 2
     Artwork: {fileID: 21300000, guid: ca82ec1e73718e249bc986e2a792fea7, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 7
     Suit: 2
     Artwork: {fileID: 21300000, guid: 52f114acdfd52f04eb3ffce3a9da8975, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 8
     Suit: 2
     Artwork: {fileID: 21300000, guid: 3f81a815637a84749926de14fc4c2e56, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 9
     Suit: 2
     Artwork: {fileID: 21300000, guid: bc6a553ee61c2d04495b5bdcc9078363, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 10
     Suit: 2
-    Artwork: {fileID: 21300000, guid: f403739288b41b74b975ec3a30d652e3, type: 3}
+    Artwork: {fileID: 21300000, guid: 1bf16a4430b6edf4d9a49095f61c0c26, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 11
     Suit: 2
-    Artwork: {fileID: 21300000, guid: ae806cd53d5ed93489aee5792ea4da50, type: 3}
+    Artwork: {fileID: 21300000, guid: 23109b3e3cd980c41a8e0dc823240f5e, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 12
     Suit: 2
-    Artwork: {fileID: 21300000, guid: 36cb85e43bbf32b489ed58f1d4670024, type: 3}
+    Artwork: {fileID: 21300000, guid: 0fdb280a6b9f21842ae78de273e3bf9c, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 0
     Suit: 3
     Artwork: {fileID: 21300000, guid: a1f7008b603f97d4c8bf8de2c72a1ea6, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 1
     Suit: 3
     Artwork: {fileID: 21300000, guid: 10f34d9cacb426b4f8c47b7ffa9762a3, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 2
     Suit: 3
     Artwork: {fileID: 21300000, guid: b7bbae3aa345e4943a57a0df8458694b, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 3
     Suit: 3
     Artwork: {fileID: 21300000, guid: 16dde8edff8caa741811e1499f8c59fe, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 4
     Suit: 3
     Artwork: {fileID: 21300000, guid: 885537ef74f78be40ae6b8b528cfdcc8, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 5
     Suit: 3
     Artwork: {fileID: 21300000, guid: 8b931fc3bf8ee774ebcb2d9b64e32f9d, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 6
     Suit: 3
     Artwork: {fileID: 21300000, guid: 06a11cb77e0ee01448568ff3e085bf0f, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 7
     Suit: 3
     Artwork: {fileID: 21300000, guid: 140d72d4a4319f24e8fb319c1e173a04, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 8
     Suit: 3
     Artwork: {fileID: 21300000, guid: 9da014c6d1e751d48887286bb173e8a6, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 9
     Suit: 3
     Artwork: {fileID: 21300000, guid: 9477db94036ddbc4abe393af4e327abb, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 10
     Suit: 3
     Artwork: {fileID: 21300000, guid: f93c14f3d2f025c4996177e371f8a9ba, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 11
     Suit: 3
     Artwork: {fileID: 21300000, guid: 434fae39828807f4b9e2e72613e49a74, type: 3}
+    CardUI: {fileID: 0}
   - Rank: 12
     Suit: 3
     Artwork: {fileID: 21300000, guid: 58ee82364f5daed45b09433e1d8cc342, type: 3}
+    CardUI: {fileID: 0}
   CardPrefab: {fileID: 885544207204171400, guid: 194b16a2b73221543bd2aee15aae7475, type: 3}
   StockParent: {fileID: 1308467481}
   DiscardPileParent: {fileID: 1108851334}
@@ -1483,6 +1535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605112738}
   - component: {fileID: 605112739}
+  - component: {fileID: 605112740}
   m_Layer: 5
   m_Name: TP Hand
   m_TagString: Untagged
@@ -1540,14 +1593,32 @@ MonoBehaviour:
     m_Top: -75
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: -180
-  m_ChildForceExpandWidth: 0
+  m_Spacing: -200
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
+  m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &605112740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605112737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc539a1fccc3359438157410940fbd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: []
+  Melds: []
+  BuysRemaining: 0
+  Points: 0
+  TotalPoints: 0
+  CardRotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
 --- !u!1 &647216093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684715471}
   - component: {fileID: 684715472}
+  - component: {fileID: 684715473}
   m_Layer: 5
   m_Name: RP Hand
   m_TagString: Untagged
@@ -1767,14 +1839,32 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: -180
+  m_Spacing: -750
   m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 1
+--- !u!114 &684715473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684715470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc539a1fccc3359438157410940fbd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: []
+  Melds: []
+  BuysRemaining: 0
+  Points: 0
+  TotalPoints: 0
+  CardRotation: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
 --- !u!1 &696334220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1901,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 215}
+  m_SizeDelta: {x: 0, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696334222
 MonoBehaviour:
@@ -1868,7 +1958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &851572312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2299,8 +2389,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1108851334}
+  - component: {fileID: 1108851335}
   m_Layer: 5
-  m_Name: Draw Card
+  m_Name: Discard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2327,6 +2418,18 @@ RectTransform:
   m_AnchoredPosition: {x: -85, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1108851335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108851333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5897fc2828e75ae449439a19c299a3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1171721057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,8 +2668,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1277828966}
   - component: {fileID: 1277828967}
+  - component: {fileID: 1277828968}
   m_Layer: 5
-  m_Name: Your Hand
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,14 +2717,32 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 15
-  m_ChildForceExpandWidth: 0
+  m_Spacing: -200
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
+  m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1277828968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277828965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc539a1fccc3359438157410940fbd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: []
+  Melds: []
+  BuysRemaining: 0
+  Points: 0
+  TotalPoints: 0
+  CardRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1293638531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,7 +2983,7 @@ GameObject:
   - component: {fileID: 1308467482}
   - component: {fileID: 1308467483}
   m_Layer: 5
-  m_Name: Deck
+  m_Name: Stock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3459,7 +3581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1644877853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4014,6 +4136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027140027}
   - component: {fileID: 2027140028}
+  - component: {fileID: 2027140029}
   m_Layer: 5
   m_Name: LP Hand
   m_TagString: Untagged
@@ -4071,14 +4194,32 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: -180
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
+  m_Spacing: -750
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &2027140029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027140026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc539a1fccc3359438157410940fbd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: []
+  Melds: []
+  BuysRemaining: 0
+  Points: 0
+  TotalPoints: 0
+  CardRotation: {x: 0, y: 0, z: 0.70710677, w: 0.70710677}
 --- !u!1 &2030258819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,7 +4230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030258820}
   m_Layer: 5
-  m_Name: Draw Deck
+  m_Name: Piles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4134,7 +4275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2118595088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4356,6 +4497,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
+    - target: {fileID: 885544207204171402, guid: 194b16a2b73221543bd2aee15aae7475, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be861453344b0d468c0f4f33f06f36d, type: 3}
     - target: {fileID: 885544207204171403, guid: 194b16a2b73221543bd2aee15aae7475, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

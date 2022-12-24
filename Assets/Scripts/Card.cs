@@ -14,6 +14,8 @@
 
         public Sprite Artwork;
 
+        public CardUI CardUI;
+
         // Indicates whether the card is a wildcard
         public bool IsWild => Rank == CardRank.Two;
 
