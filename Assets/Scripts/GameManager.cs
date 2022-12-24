@@ -81,6 +81,8 @@ namespace rumi
 
             // Deal the cards to the players
             players = FindObjectsOfType<Player>().ToList();
+
+            DiscardPileComponent.CardDiscarded += DiscardPileComponent_CardDiscarded;
         }
 
         // Shuffles the list of cards using the Fisher-Yates shuffle algorithm
@@ -114,8 +116,15 @@ namespace rumi
             }
 
             // Set up the discard pile
-            DiscardPileComponent.Add(StockPileComponent.DrawCard());
+            DiscardPileComponent.Discard(StockPileComponent.DrawCard(), false);
 
+            currentPlayer.MakeMove();
+        }
+
+        private void DiscardPileComponent_CardDiscarded()
+        {
+            currentPlayer.EndMove();
+            currentPlayerIndex = (currentPlayerIndex + 1) % 4;
             currentPlayer.MakeMove();
         }
 
@@ -290,7 +299,7 @@ namespace rumi
 
             // Discard the most useless card
             currentPlayer.Hand.Remove(mostUselessCard);
-            DiscardPileComponent.Add(mostUselessCard);
+            DiscardPileComponent.Discard(mostUselessCard);
 
             // Check if the current player has gone out
             if (currentPlayer.Hand.Count == 0)

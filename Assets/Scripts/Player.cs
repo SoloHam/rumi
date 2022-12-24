@@ -86,6 +86,12 @@
             this.CurTurnState = TurnState.Drawing;
         }
 
+        public void EndMove()
+        {
+            this.IsMyTurn = false;
+            this.Hand.ForEach(c => c.CardUI.ShowFace = false);
+        }
+
         public void OnDrawCardFromStockPile(CardUI _)
         {
             if (!this.IsMyTurn || CurTurnState != TurnState.Drawing)
@@ -94,6 +100,7 @@
             var card = GameManager.StockPileComponent.DrawCard();
             card.CardUI.Move(this.HandCardsTransform);
             card.CardUI.ShowFace = this.IsMyTurn;
+            Hand.Add(card);
 
             CurTurnState = TurnState.Melding;
         }
@@ -106,6 +113,7 @@
             var card = GameManager.DiscardPileComponent.Pop();
             card.CardUI.Move(this.HandCardsTransform);
             card.CardUI.ShowFace = this.IsMyTurn;
+            Hand.Add(card);
 
             CurTurnState = TurnState.Melding;
         }
@@ -121,8 +129,6 @@
             {
                 return;
             }
-
-            Debug.Log("Card Clicked");
 
             // Raise the CardClicked event
             HandCardClicked?.Invoke(cardUI);
@@ -147,7 +153,7 @@
         public void DicardCard()
         {
             Hand.Remove(SelectedCard.Card);
-            GameManager.DiscardPileComponent.Add(SelectedCard.Card);
+            GameManager.DiscardPileComponent.Discard(SelectedCard.Card);
             CommandPanelTransform.gameObject.SetActive(false);
 
             CurTurnState = TurnState.Discarded;

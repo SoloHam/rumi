@@ -16,6 +16,10 @@
         public delegate void PileClickedEventHandler(CardUI cardUI);
         public event PileClickedEventHandler PileClicked;
 
+        // Define the event and its event handler delegate
+        public delegate void CardDiscardedEventHandler();
+        public event CardDiscardedEventHandler CardDiscarded;
+
         private void Awake()
         {
             // Iterate through the children of the game object
@@ -36,12 +40,17 @@
 
         }
 
-        public void Add(Card card)
+        public void Discard(Card card, bool raiseEvent = true)
         {
             discardPile.Push(card);
 
             card.CardUI.Move(this.transform);
             card.CardUI.ShowFace = true;
+
+            if (raiseEvent)
+            {
+                CardDiscarded?.Invoke();
+            }
         }
 
         public Card Peek()

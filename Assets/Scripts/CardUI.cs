@@ -27,6 +27,8 @@
             this.BackSideSprite = FindObjectOfType<GameManager>().CardBackSide;
             this.ImageComponent = GetComponent<Image>();
 
+            this.GetComponent<RectTransform>().sizeDelta = new Vector2(150, 215);
+
             this.Card = card;
         }
 
@@ -35,11 +37,11 @@
             transform.SetParent(parent);
 
             var cardTransform = GetComponent<RectTransform>();
-            var cardPos = cardTransform.localPosition;
-            cardPos.x = 0;
-            cardTransform.localPosition = cardPos;
 
             cardTransform.localRotation = Quaternion.identity;
+            cardTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            cardTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            cardTransform.localPosition = new Vector3(0, 0);
 
             if (rotation != null)
             {
