@@ -27,6 +27,18 @@ namespace rumi
         // Whether the game has ended
         bool gameEnded = false;
 
+        [SerializeField]
+        List<Card> Deck;
+
+        [SerializeField]
+        GameObject CardPrefab;
+
+        [SerializeField]
+        RectTransform StockParent;
+
+        [SerializeField]
+        RectTransform DiscardPileParent;
+
         // The player who won the game
         private Player winner;
 
@@ -54,15 +66,12 @@ namespace rumi
         void InitializeGame()
         {
             // Create a list of all cards in the game (two decks)
-            List<Card> allCards = new List<Card>();
-            for (int i = 0; i < 2; i++)
+            List<Card> allCards = this.Deck.Union(this.Deck).ToList();
+
+            foreach (var card in allCards)
             {
-                foreach (CardRank rank in Enum.GetValues(typeof(CardRank)))
-                {
-                    foreach (CardSuit suit in Enum.GetValues(typeof(CardSuit)))
-                        // Add a new card to the list
-                        allCards.Add(new Card(rank, suit));
-                }
+                var cardObj = Instantiate(this.CardPrefab, this.StockParent);
+                cardObj.GetComponent<CardUI>
             }
 
             // Shuffle the cards
@@ -265,7 +274,7 @@ namespace rumi
         {
             // Get the current player and the melds required in the current round
             Player currentPlayer = players[currentPlayerIndex];
-            List<Meld> requiredMelds = GetRequiredMelds(currentRound);
+            List<Meld> requiredMelds = new List<Meld>(); //GetRequiredMelds(currentRound);
 
             // Find the most useless card in the current player's hand
             Card mostUselessCard = null;
@@ -296,7 +305,7 @@ namespace rumi
             else
             {
                 // The current player's turn has ended, move to the next player
-                AdvanceTurn();
+                //AdvanceTurn();
             }
 
         }
@@ -334,11 +343,11 @@ namespace rumi
             // Check if the card can be used to form a new meld
             List<Card> meldCards = new List<Card>();
             meldCards.Add(card);
-            if (CanMeldCards(meldCards))
-            {
-                // The card can be used to form a new meld, reduce the score
-                score -= 10;
-            }
+            //if (CanMeldCards(meldCards))
+            //{
+            //    // The card can be used to form a new meld, reduce the score
+            //    score -= 10;
+            //}
 
             // Check if the card is a wildcard
             if (card.IsWild)

@@ -1140,9 +1140,165 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aaec189527306e4d86df4f54f6138f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - Number: 1
-    Suite: 0
+  Deck:
+  - Rank: 0
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 80ef12bd54191a649894362817fabbdd, type: 3}
+  - Rank: 1
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 1d9665595d5392644a6684a713c11017, type: 3}
+  - Rank: 2
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 8cad84bfadcc1724b95fb14787e382bb, type: 3}
+  - Rank: 3
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: d9289cec216fa5f4b977524f1694d643, type: 3}
+  - Rank: 4
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 4ec341db8bf92db4fba740d30905f718, type: 3}
+  - Rank: 5
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 27774c253ecbf604fad7cee7ce30fb63, type: 3}
+  - Rank: 6
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 3a5597aa2e2eda643a06fb4919d2281b, type: 3}
+  - Rank: 7
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 0c8d3a50eedc0ef45a185fae35660e25, type: 3}
+  - Rank: 8
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 866bea9f0255bfe4e9d5c47d9fae6ec4, type: 3}
+  - Rank: 9
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: d59a3e7acf5ee78419161e727d3b3933, type: 3}
+  - Rank: 10
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 0559466d182111b4d95b91da669a4473, type: 3}
+  - Rank: 11
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: cfcf7882a6a3de644b725a75305b13d6, type: 3}
+  - Rank: 12
+    Suit: 0
+    Artwork: {fileID: 21300000, guid: 67db8db17b9de0c4cab64d9b371e7c03, type: 3}
+  - Rank: 0
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 9ae60dd7185ca8245955d0574c0ff5cd, type: 3}
+  - Rank: 1
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: ca765825f02711448be4fedb0a88dd09, type: 3}
+  - Rank: 2
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 98483ff99884dce4a8876544f76ebfc5, type: 3}
+  - Rank: 3
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: dd6d68bbd2c4f1846ad78c0fa1d55502, type: 3}
+  - Rank: 4
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 4cbd8908dffcab64da0c57b111c26fe7, type: 3}
+  - Rank: 5
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 477393bbbf127154fbc3809e7fd8ad60, type: 3}
+  - Rank: 6
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: ff1b5cf2c1acdfc4b834ae61a375c312, type: 3}
+  - Rank: 7
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: f7e5417a2f924f14ea87afff05045ead, type: 3}
+  - Rank: 8
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 0f8bce750042ebe42952a30fb37344d7, type: 3}
+  - Rank: 9
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: f74de6344060f7b41aa03358e8ccfe91, type: 3}
+  - Rank: 10
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 6241c5d1b2641e945adb0409a2cc9527, type: 3}
+  - Rank: 11
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: 6f4a09c56baf28a4293218b8f243cbdc, type: 3}
+  - Rank: 12
+    Suit: 1
+    Artwork: {fileID: 21300000, guid: ee1868a2b9f036d4383531bd10cff373, type: 3}
+  - Rank: 0
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: f403739288b41b74b975ec3a30d652e3, type: 3}
+  - Rank: 1
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 494e5becfaaf9b54a8b17600a8acf49f, type: 3}
+  - Rank: 2
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 2023597e29f42d6449bf02c480c2f280, type: 3}
+  - Rank: 3
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 0dd2dd0243a28e443a318f56e3ed0e72, type: 3}
+  - Rank: 4
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: f5c4da3ca7740b54d86ec60bae8b4aed, type: 3}
+  - Rank: 5
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 6d1f8d3e7a8793d42b556549ffc92751, type: 3}
+  - Rank: 6
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: ca82ec1e73718e249bc986e2a792fea7, type: 3}
+  - Rank: 7
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 52f114acdfd52f04eb3ffce3a9da8975, type: 3}
+  - Rank: 8
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 3f81a815637a84749926de14fc4c2e56, type: 3}
+  - Rank: 9
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: bc6a553ee61c2d04495b5bdcc9078363, type: 3}
+  - Rank: 10
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: f403739288b41b74b975ec3a30d652e3, type: 3}
+  - Rank: 11
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: ae806cd53d5ed93489aee5792ea4da50, type: 3}
+  - Rank: 12
+    Suit: 2
+    Artwork: {fileID: 21300000, guid: 36cb85e43bbf32b489ed58f1d4670024, type: 3}
+  - Rank: 0
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: a1f7008b603f97d4c8bf8de2c72a1ea6, type: 3}
+  - Rank: 1
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 10f34d9cacb426b4f8c47b7ffa9762a3, type: 3}
+  - Rank: 2
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: b7bbae3aa345e4943a57a0df8458694b, type: 3}
+  - Rank: 3
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 16dde8edff8caa741811e1499f8c59fe, type: 3}
+  - Rank: 4
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 885537ef74f78be40ae6b8b528cfdcc8, type: 3}
+  - Rank: 5
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 8b931fc3bf8ee774ebcb2d9b64e32f9d, type: 3}
+  - Rank: 6
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 06a11cb77e0ee01448568ff3e085bf0f, type: 3}
+  - Rank: 7
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 140d72d4a4319f24e8fb319c1e173a04, type: 3}
+  - Rank: 8
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 9da014c6d1e751d48887286bb173e8a6, type: 3}
+  - Rank: 9
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 9477db94036ddbc4abe393af4e327abb, type: 3}
+  - Rank: 10
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: f93c14f3d2f025c4996177e371f8a9ba, type: 3}
+  - Rank: 11
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 434fae39828807f4b9e2e72613e49a74, type: 3}
+  - Rank: 12
+    Suit: 3
+    Artwork: {fileID: 21300000, guid: 58ee82364f5daed45b09433e1d8cc342, type: 3}
+  StockParent: {fileID: 0}
+  DiscardPileParent: {fileID: 0}
 --- !u!4 &456888460
 Transform:
   m_ObjectHideFlags: 0

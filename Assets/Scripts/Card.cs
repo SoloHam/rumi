@@ -1,10 +1,18 @@
 ﻿namespace rumi
 {
+    using System;
+
+    using UnityEngine;
+
     // Represents a single playing card
+    [Serializable]
     public class Card
     {
-        public CardRank Rank { get; set; }
-        public CardSuit Suit { get; set; }
+        public CardRank Rank;
+
+        public CardSuit Suit;
+
+        public Sprite Artwork;
 
         // Indicates whether the card is a wildcard
         public bool IsWild => Rank == CardRank.Two;
