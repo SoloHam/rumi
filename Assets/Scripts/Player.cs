@@ -153,7 +153,7 @@
         public void DicardCard()
         {
             Hand.Remove(SelectedCard.Card);
-            GameManager.DiscardPileComponent.Discard(SelectedCard.Card);
+            GameManager.DiscardPileComponent.Add(SelectedCard.Card);
             CommandPanelTransform.gameObject.SetActive(false);
 
             CurTurnState = TurnState.Discarded;

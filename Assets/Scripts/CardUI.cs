@@ -1,16 +1,19 @@
 ﻿namespace rumi
 {
     using UnityEngine;
+    using UnityEngine.EventSystems;
     using UnityEngine.UI;
 
     // Represents a single playing card
-    public class CardUI: MonoBehaviour
+    public class CardUI: MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public Card Card;
         public Image ImageComponent;
 
         public bool ShowFace;
         private Sprite BackSideSprite;
+
+        private static CardUI HoveredCard;
 
         private void Start()
         {
@@ -47,6 +50,39 @@
             {
                 cardTransform.localRotation = rotation.Value;
             }
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (HoveredCard == null)
+            {
+                return;
+            }
+
+            var hoveredSiblingIndex = transform.parent.childCount;
+            for (int i = 0; i < transform.parent.childCount; i++)
+            {
+                if (transform.parent.GetChild(i) == HoveredCard.transform)
+                {
+                    hoveredSiblingIndex = i;
+                    break;
+                }
+            }
+            transform.SetSiblingIndex(hoveredSiblingIndex);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            HoveredCard = this;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            HoveredCard = null;
         }
     }
 }

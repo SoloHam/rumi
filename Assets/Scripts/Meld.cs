@@ -5,20 +5,24 @@
 
     using UnityEngine;
 
+    public enum MeldType
+    {
+        Set,
+        Run
+    }
+
     // Represents a group of cards that form a meld
     [Serializable]
     public class Meld
     {
-        [SerializeField]
-        public List<Card> Cards { get; set; }
+        public int MinimumCount;
 
-        [SerializeField]
-        public bool IsSet { get; set; }
+        public MeldType Type;
 
-        public Meld(List<Card> cards, bool isSet)
+        public Meld(MeldType type, int minimumCount = 3)
         {
-            Cards = cards;
-            IsSet = isSet;
+            Type = type;
+            MinimumCount = minimumCount;
         }
     }
 }

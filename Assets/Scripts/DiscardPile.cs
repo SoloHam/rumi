@@ -40,7 +40,7 @@
 
         }
 
-        public void Discard(Card card, bool raiseEvent = true)
+        public void Add(Card card, bool raiseEvent = true)
         {
             discardPile.Push(card);
 

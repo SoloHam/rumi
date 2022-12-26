@@ -19,10 +19,11 @@
         // Indicates whether the card is a wildcard
         public bool IsWild => Rank == CardRank.Two;
 
-        public Card(CardRank rank, CardSuit suit)
+        public Card(CardRank rank, CardSuit suit, Sprite artwork = null)
         {
             Rank = rank;
             Suit = suit;
+            Artwork = artwork;
         }
 
         // Returns the point value of the specified card
