@@ -14,6 +14,7 @@
         private Sprite BackSideSprite;
 
         private static CardUI HoveredCard;
+        public static CardUI DraggedCard;
 
         private void Start()
         {
@@ -44,7 +45,8 @@
             cardTransform.localRotation = Quaternion.identity;
             cardTransform.anchorMin = new Vector2(0.5f, 0.5f);
             cardTransform.anchorMax = new Vector2(0.5f, 0.5f);
-            cardTransform.localPosition = new Vector3(0, 0);
+            cardTransform.localPosition = Vector3.zero;
+            cardTransform.localScale = Vector3.one;
 
             if (rotation != null)
             {
@@ -58,21 +60,35 @@
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (HoveredCard == null)
+            DraggedCard = this;
+            if (HoveredCard != null)
             {
+                var hoveredSiblingIndex = HoveredCard.transform.parent.childCount;
+                for (int i = 0; i < HoveredCard.transform.parent.childCount; i++)
+                {
+                    if (HoveredCard.transform.parent.GetChild(i) == HoveredCard.transform)
+                    {
+                        hoveredSiblingIndex = i;
+                        break;
+                    }
+                }
+
+                if (HoveredCard.transform.parent.GetComponent<MeldUI>() != null)
+                {
+                    MeldUI.HoveredMeld.AddCard(this);
+                }
+
+                transform.SetParent(HoveredCard.transform.parent);
+                transform.SetSiblingIndex(hoveredSiblingIndex);
+                transform.localScale = Vector3.one;
                 return;
             }
 
-            var hoveredSiblingIndex = transform.parent.childCount;
-            for (int i = 0; i < transform.parent.childCount; i++)
+            if (MeldUI.HoveredMeld != null)
             {
-                if (transform.parent.GetChild(i) == HoveredCard.transform)
-                {
-                    hoveredSiblingIndex = i;
-                    break;
-                }
+                MeldUI.HoveredMeld.AddCard(this);
+                return;
             }
-            transform.SetSiblingIndex(hoveredSiblingIndex);
         }
 
         public void OnPointerEnter(PointerEventData eventData)

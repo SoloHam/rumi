@@ -24,5 +24,10 @@
             Type = type;
             MinimumCount = minimumCount;
         }
+
+        public override string ToString()
+        {
+            return $"{(Type == MeldType.Set ? "SET" : "RUN")} OF {MinimumCount}";
+        }
     }
 }

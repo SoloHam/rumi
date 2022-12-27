@@ -1,6 +1,8 @@
 ﻿namespace rumi
 {
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using UnityEngine;
     using UnityEngine.EventSystems;
@@ -25,10 +27,16 @@
         Transform HandCardsTransform;
 
         [SerializeField]
+        Transform HandCardMeldsTransform;
+
+        [SerializeField]
         RectTransform CommandPanelTransform;
 
         [SerializeField]
         CardUI SelectedCard;
+
+        [SerializeField]
+        GameObject MeldUIPrefab;
 
         public int BuysRemaining;
         public int Points;
@@ -62,8 +70,20 @@
 
         private void Awake()
         {
-            // Iterate through the children of the game object
+            // Iterate through the children of the HandCardsTransform game object
             foreach (Transform child in HandCardsTransform)
+            {
+                if (child == HandCardMeldsTransform)
+                {
+                    continue;
+                }
+
+                // Destroy the child game object
+                Destroy(child.gameObject);
+            }
+
+            // Iterate through the children of the HandCardMeldsTransform game object
+            foreach (Transform child in HandCardMeldsTransform)
             {
                 // Destroy the child game object
                 Destroy(child.gameObject);
@@ -132,6 +152,18 @@
 
             // Raise the CardClicked event
             HandCardClicked?.Invoke(cardUI);
+        }
+
+        public void InitialiseMelds()
+        {
+            var melds = GameManager.Instance.CurrentRound.Melds.Select(x => new Meld(x.Type, x.MinimumCount)).ToList();
+            foreach (var meld in melds)
+            {
+                var meldUI = Instantiate(MeldUIPrefab, HandCardMeldsTransform);
+                var meldUIComponent = meldUI.GetComponent<MeldUI>();
+
+                meldUIComponent.Initialise(meld);
+            }
         }
 
         private void ShowHandCardUI(CardUI card)

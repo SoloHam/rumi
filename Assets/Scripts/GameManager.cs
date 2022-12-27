@@ -6,10 +6,11 @@ namespace rumi
     using System.Linq;
     using UnityEngine.UI;
     using TMPro;
-    using System;
 
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance;
+
         // List of all players in the game
         List<Player> Players;
 
@@ -54,10 +55,15 @@ namespace rumi
 
         private Player currentPlayer => Players[currentPlayerIndex];
 
-        private Round currentRound => Rounds[currentRoundNumber - 1];
+        public Round CurrentRound => Rounds[currentRoundNumber - 1];
 
         // The player who won the game
         private Player winner;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         void Start()
         {
@@ -119,12 +125,13 @@ namespace rumi
         void StartRound()
         {
             RoundText.text = $"ROUND {currentRoundNumber}";
-            MeldsText.text = currentRound.ToString();
+            MeldsText.text = CurrentRound.ToString();
 
             foreach (Player player in Players)
             {
                 player.Melds.Clear();
                 player.Points = 0;
+                player.InitialiseMelds();
             }
 
             for (int i = 0; i < 11; i++)
