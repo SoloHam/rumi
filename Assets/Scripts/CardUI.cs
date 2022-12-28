@@ -5,7 +5,7 @@
     using UnityEngine.UI;
 
     // Represents a single playing card
-    public class CardUI: MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
+    public class CardUI: MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerUpHandler, IPointerExitHandler
     {
         public Card Card;
         public Image ImageComponent;
@@ -73,7 +73,7 @@
                     }
                 }
 
-                if (HoveredCard.transform.parent.GetComponent<MeldUI>() != null)
+                if (HoveredCard.transform.parent.parent.GetComponent<MeldUI>() != null)
                 {
                     MeldUI.HoveredMeld.AddCard(this);
                 }
@@ -94,6 +94,11 @@
         public void OnPointerEnter(PointerEventData eventData)
         {
             HoveredCard = this;
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            DraggedCard = null;
         }
 
         public void OnPointerExit(PointerEventData eventData)

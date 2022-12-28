@@ -62,10 +62,13 @@
 
         public void AddCard(Card card)
         {
-            this.Hand.Add(card);
+            if (!Hand.Contains(card))
+            {
+                Hand.Add(card);
+            }
 
-            card.CardUI.Move(this.HandCardsTransform);
-            card.CardUI.ShowFace = this.IsMyTurn;
+            card.CardUI.Move(HandCardsTransform);
+            card.CardUI.ShowFace = IsMyTurn;
         }
 
         private void Awake()

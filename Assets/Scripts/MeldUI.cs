@@ -25,14 +25,15 @@
         [SerializeField]
         TextMeshProUGUI MeldText;
 
-        private void Start()
+        void Start()
         {
 
         }
 
-        private void Update()
+        void Update()
         {
-
+            var width = (Cards.Count == 0 ? 150 : (Cards.Count * 150) - ((Cards.Count - 1) * 130)) + 20;
+            GetComponent<RectTransform>().sizeDelta = new Vector2(width, GetComponent<RectTransform>().sizeDelta.y);
         }
 
         public void Initialise(Meld meld)
@@ -43,7 +44,10 @@
 
         public void AddCard(CardUI cardUI)
         {
-            Cards.Add(cardUI.Card);
+            if (!Cards.Contains(cardUI.Card))
+            {
+                Cards.Add(cardUI.Card);
+            }
             cardUI.Move(CardsHolder);
         }
 
@@ -56,9 +60,10 @@
         {
             HoveredMeld = null;
 
-            if (CardUI.DraggedCard.Card != null && Cards.Contains(CardUI.DraggedCard.Card))
+            if (CardUI.DraggedCard?.Card != null && Cards.Contains(CardUI.DraggedCard.Card))
             {
                 Cards.Remove(CardUI.DraggedCard.Card);
+                GameManager.Instance.CurrentPlayer.AddCard(CardUI.DraggedCard.Card);
             }
         }
     }

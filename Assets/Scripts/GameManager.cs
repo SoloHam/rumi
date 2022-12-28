@@ -53,7 +53,7 @@ namespace rumi
         [SerializeField]
         public DiscardPile DiscardPileComponent => FindObjectOfType<DiscardPile>();
 
-        private Player currentPlayer => Players[currentPlayerIndex];
+        public Player CurrentPlayer => Players[currentPlayerIndex];
 
         public Round CurrentRound => Rounds[currentRoundNumber - 1];
 
@@ -145,14 +145,14 @@ namespace rumi
             // Set up the discard pile
             DiscardPileComponent.Add(StockPileComponent.DrawCard(), false);
 
-            currentPlayer.MakeMove();
+            CurrentPlayer.MakeMove();
         }
 
         private void DiscardPileComponent_CardDiscarded()
         {
-            currentPlayer.EndMove();
+            CurrentPlayer.EndMove();
             currentPlayerIndex = (currentPlayerIndex + 1) % 4;
-            currentPlayer.MakeMove();
+            CurrentPlayer.MakeMove();
         }
 
         // Calculates the current player's points for the round
