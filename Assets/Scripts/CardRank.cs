@@ -14,30 +14,30 @@
     public enum CardRank
     {
         [CardValue(20)]
-        Ace,
+        Ace = 13,
         [CardValue(20)]
-        Two,
+        Two = 1,
         [CardValue(5)]
-        Three,
+        Three = 2,
         [CardValue(5)]
-        Four,
+        Four = 3,
         [CardValue(5)]
-        Five,
+        Five = 4,
         [CardValue(5)]
-        Six,
+        Six = 5,
         [CardValue(5)]
-        Seven,
+        Seven = 6,
         [CardValue(5)]
-        Eight,
+        Eight = 7,
         [CardValue(5)]
-        Nine,
+        Nine = 8,
         [CardValue(10)]
-        Ten,
+        Ten = 9,
         [CardValue(10)]
-        Jack,
+        Jack = 10,
         [CardValue(10)]
-        Queen,
+        Queen = 11,
         [CardValue(10)]
-        King
+        King = 12
     }
 }
