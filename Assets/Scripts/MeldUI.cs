@@ -106,23 +106,22 @@
                         return;
                     }
 
-                    if (lastRank == null)
-                    {
-                        maxSequence++;
-
-                        lastRank = card.Rank;
-                        lastSuit = card.Suit;
-                        return;
-                    }
-
                     if (card.IsWild)
                     {
                         maxSequence++;
-                        lastRank = card.Rank;
+                        if (maxSequence > 1)
+                        {
+                            lastRank++;
+                        }
+                        else if (Cards.Count > 1)
+                        {
+                            lastRank = Cards[1].Rank - 1;
+                            lastSuit = Cards[1].Suit;
+                        }
                         return;
                     }
 
-                    if (!(lastSuit == card.Suit && (lastRank + 1 == card.Rank || lastRank == CardRank.Two)))
+                    if (!(lastSuit == card.Suit && lastRank + 1 == card.Rank))
                     {
                         maxSequence = 0;
                     }

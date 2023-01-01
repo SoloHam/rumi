@@ -23,7 +23,7 @@
 
             foreach(var setKey in setsGroup.Keys)
             {
-                meldsBuilder.Append($"{setsGroup[setKey]} SETS OF {setKey}");
+                meldsBuilder.Append($"{setsGroup[setKey]} SETS OF {setKey}\n");
 
                 if(setsGroup.Keys.Last() != setKey)
                 {
@@ -33,7 +33,7 @@
 
             foreach (var runKey in runsGroup.Keys)
             {
-                meldsBuilder.Append($"{setsGroup[runKey]} RUNS OF {runKey}");
+                meldsBuilder.Append($"{runsGroup[runKey]} RUNS OF {runKey}\n");
 
                 if (runsGroup.Keys.Last() != runKey)
                 {
