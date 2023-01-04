@@ -16,6 +16,9 @@
         private static CardUI HoveredCard;
         public static CardUI DraggedCard;
 
+        public Player Player => GetComponentInParent<Player>();
+        public MeldUI Meld => transform.parent.GetComponent<MeldUI>();
+
         private void Start()
         {
 
@@ -76,6 +79,7 @@
                 if (HoveredCard.transform.parent.parent.GetComponent<MeldUI>() != null)
                 {
                     MeldUI.HoveredMeld.AddCard(this);
+                    Player.ResetSelectedCardUI();
                 }
 
                 transform.SetParent(HoveredCard.transform.parent);

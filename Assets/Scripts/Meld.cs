@@ -19,6 +19,8 @@
 
         public MeldType Type;
 
+        public MeldUI MeldUI;
+
         public Meld(MeldType type, int minimumCount = 3)
         {
             Type = type;

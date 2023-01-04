@@ -170,13 +170,15 @@ MonoBehaviour:
   Meld:
     MinimumCount: 0
     Type: 0
-  Cards: []
+    MeldUI: {fileID: 0}
+  IsMelded: 0
   CardsHolder: {fileID: 7970948800858033993}
   MeldText: {fileID: 622411079541341967}
   MeldBackground: {fileID: 6951204808428980920}
   IdleColor: {r: 1, g: 1, b: 1, a: 1}
   InvalidColor: {r: 1, g: 0.96862745, b: 0.69411767, a: 1}
   ValidColor: {r: 0.53333336, g: 1, b: 0.7882353, a: 1}
+  MeldedColor: {r: 0.3647059, g: 0.90588236, b: 0.5294118, a: 1}
 --- !u!1 &8410051128348753399
 GameObject:
   m_ObjectHideFlags: 0

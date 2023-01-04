@@ -18,6 +18,11 @@
 
         public Meld Meld;
 
+        public bool? IsValid;
+        public Player Player => GetComponentInParent<Player>();
+
+        public bool IsMelded => Player.HasMelded;
+
         [SerializeField]
         public List<Card> Cards => transform.GetComponentsInChildren<CardUI>().Select(x => x.Card).ToList();
 
@@ -39,6 +44,9 @@
         [SerializeField]
         Color ValidColor;
 
+        [SerializeField]
+        Color MeldedColor;
+
         void Start()
         {
 
@@ -49,13 +57,23 @@
             var width = (Cards.Count == 0 ? 150 : (Cards.Count * 150) - ((Cards.Count - 1) * 130)) + 20;
             GetComponent<RectTransform>().sizeDelta = new Vector2(width, GetComponent<RectTransform>().sizeDelta.y);
 
-            ValidateMeld();
+            IsValid = Validate();
+
+            if (IsMelded)
+            {
+                MeldBackground.color = MeldedColor;
+            }
+            else if (IsValid.HasValue)
+            {
+                MeldBackground.color = IsValid.Value ? ValidColor : InvalidColor;
+            }
         }
 
         public void Initialise(Meld meld)
         {
             Meld = meld;
             MeldText.text = meld.ToString();
+            Meld.MeldUI = this;
         }
 
         public void AddCard(CardUI cardUI)
@@ -78,12 +96,12 @@
             }
         }
 
-        private void ValidateMeld()
+        private bool? Validate()
         {
             if (!Cards.Any())
             {
                 MeldBackground.color = IdleColor;
-                return;
+                return null;
             }
 
             var isValid = false;
@@ -133,7 +151,7 @@
                 isValid = maxSequence >= Meld.MinimumCount;
             }
 
-            MeldBackground.color = isValid ? ValidColor : InvalidColor;
+            return isValid;
         }
     }
 }

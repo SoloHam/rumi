@@ -1,11 +1,11 @@
 ﻿namespace rumi
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
     using UnityEngine;
     using UnityEngine.EventSystems;
+    using UnityEngine.UI;
 
     public enum TurnState
     {
@@ -21,7 +21,7 @@
         public List<Card> Hand;
 
         [SerializeField]
-        public List<Meld> Melds;
+        public List<Meld> Melds => HandCardMeldsTransform.GetComponentsInChildren<MeldUI>().Select(x => x.Meld).ToList();
 
         [SerializeField]
         Transform HandCardsTransform;
@@ -38,11 +38,15 @@
         [SerializeField]
         GameObject MeldUIPrefab;
 
+        [SerializeField]
+        Button MeldOffBtn;
+
         public int BuysRemaining;
         public int Points;
         public int TotalPoints;
 
         public bool IsMyTurn;
+        public bool HasMelded;
 
         public TurnState CurTurnState;
 
@@ -51,14 +55,6 @@
         // Define the event and its event handler delegate
         public delegate void HandCardClickedEventHandler(CardUI cardUI);
         public event HandCardClickedEventHandler HandCardClicked;
-
-        public Player(List<Card> hand, List<Meld> melds, int buysRemaining, int totalPoints)
-        {
-            Hand = hand;
-            Melds = melds;
-            BuysRemaining = buysRemaining;
-            TotalPoints = totalPoints;
-        }
 
         public void AddCard(Card card)
         {
@@ -171,7 +167,7 @@
 
         private void ShowHandCardUI(CardUI card)
         {
-            if (!IsMyTurn || CurTurnState != TurnState.Melding)
+            if (!IsMyTurn || CurTurnState != TurnState.Melding || Melds.Any(x => x.MeldUI.Cards.Contains(card.Card)))
                 return;
 
             this.SelectedCard = card;
@@ -194,9 +190,21 @@
             CurTurnState = TurnState.Discarded;
         }
 
+        public void MeldOff()
+        {
+            HasMelded = true;
+        }
+
+        public void ResetSelectedCardUI()
+        {
+            CommandPanelTransform.gameObject.SetActive(false);
+            this.SelectedCard = null;
+        }
+
         private void Update()
         {
-
+            var showMeldOffBtn = !HasMelded && Melds.All(x => x.MeldUI.IsValid ?? false);
+            MeldOffBtn.gameObject.SetActive(showMeldOffBtn);
         }
     }
 }
